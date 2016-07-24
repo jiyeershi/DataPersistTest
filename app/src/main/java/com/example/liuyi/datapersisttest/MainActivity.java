@@ -3,6 +3,7 @@ package com.example.liuyi.datapersisttest;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
@@ -28,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         String cacheStr = load();
-        if (cacheStr != "") {
+        //字符串的判断可以用TextUtils.isEmpty(cacheStr),该函数可以判断空字符串和null
+        if (!TextUtils.isEmpty(cacheStr)) {
             editText.setText(cacheStr);
         }
     }
